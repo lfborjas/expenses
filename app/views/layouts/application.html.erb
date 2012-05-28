@@ -30,10 +30,14 @@
           </a>
           <a class="brand" href="#">Expenses</a>
           <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+            <ul class="nav pull-right">
+              <% if user_signed_in? %>
+                <li><%= link_to current_user.email, root_path %> </li>
+                <li><%=  link_to "Log out", destroy_user_session_path, method: :delete%></li>
+              <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -42,6 +46,12 @@
 
     <div class="container">
       <div class="content">
+       <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert">×</a>
+          <%= msg %>
+        </div>
+      <% end %>
         <div class="row">
            <div class="span9">
               <%= yield %>

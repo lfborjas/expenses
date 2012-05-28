@@ -1,4 +1,9 @@
 Expenses::Application.routes.draw do
+
+  devise_for :users
+  resource :summary
+  root to: "summary#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
