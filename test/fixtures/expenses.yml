@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  quantity: 1.5
+  detail: MyText
+  balance_before: 1.5
+  balance_after: 1.5
+
+two:
+  user_id: 1
+  quantity: 1.5
+  detail: MyText
+  balance_before: 1.5
+  balance_after: 1.5

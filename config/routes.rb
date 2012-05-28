@@ -1,5 +1,7 @@
 Expenses::Application.routes.draw do
 
+  resources :expenses
+
   devise_for :users
   resource :summary
   root to: "summary#show"

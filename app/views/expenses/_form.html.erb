@@ -1,0 +1,11 @@
+<%= simple_form_for @expense, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :quantity %>
+  <%= f.input :detail %>
+  <%= f.input :balance_before %>
+  <%= f.input :balance_after %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                expenses_path, :class => 'btn' %>
+  </div>
+<% end %>
